@@ -11,7 +11,7 @@
 - Scikit-fuzzy: https://scikit-fuzzy.readthedocs.io/en/latest/
 ### Cài đặt backend
 - first step ``` cd backend ```
-- copy file **.env.example** and rename this to **.env**
+- create file env ``` cp .env.example .env ```
 - Setup Environment ``` python -m venv venv ``` 
 - Activate ``` . venv/Scripts/activate ```
 - Install packages: ``` pip install -r requirements.txt ```
@@ -34,7 +34,7 @@ touch database.db
 ### Cài đặt
 first step ``` cd frontend ```
 - install **Nodejs**
-- copy file **.env.example** and rename this to **.env**
+- create file env ``` cp .env.example .env ```
 - install packages``` npm install ```
 ### Run Frontend
-``` npm run start ```
+``` npm run dev ```
