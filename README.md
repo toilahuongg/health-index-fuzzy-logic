@@ -30,6 +30,7 @@ touch database.db
 ### Công nghệ
 - React: https://react.dev/
 - React-admin: https://marmelab.com/react-admin/
+- Chartjs: https://www.chartjs.org/
 ### Cài đặt
 first step ``` cd frontend ```
 - install **Nodejs**
