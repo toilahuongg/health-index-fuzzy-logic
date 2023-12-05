@@ -181,6 +181,23 @@ const ChartList = () => {
         <Line
           data={{
             datasets: [{
+              label: 'Mất răng',
+              data,
+            }],
+          }}
+          options={{
+            parsing: {
+              xAxisKey: 'created_at',
+              yAxisKey: 'rang'
+            },
+            ...renderOptions() as any
+          }}
+        />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <Line
+          data={{
+            datasets: [{
               label: 'Nhịp tim',
               data,
             }],
@@ -225,6 +242,7 @@ export const HeathIndexShow: React.FC = () => {
             <NumberField min={0} source="can_nang" label="Cân nặng (kg)" validate={required()} />
             <NumberField min={0} source="mat" label="Thị lực (/20)" validate={required()} />
             <NumberField min={0} source="suc_nghe" label="Sức nghe (m)" validate={required()} />
+            <NumberField min={0} source="rang" label="Mất răng (cái)" validate={required()} />
             <NumberField min={0} source="mach" label="Nhịp tim (lần/phút)" validate={required()} />
             <FunctionField label="Co rút ngón chân/tay" render={(record: any) => record.co_rut || 0} />
           </SimpleShowLayout>
