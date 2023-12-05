@@ -11,6 +11,13 @@
 - Setup Environment ``` python -m venv venv ``` 
 - Activate ``` . venv/Scripts/activate ```
 - Install packages: ``` pip install -r requirements.txt ```
+- Create file database: 
+```
+mkdir db
+cd db
+touch database.db
+```
+- Seeding database: ``` flask db_reset ```
 ### Before deploying
 ``` pip freeze > requirements.txt ```
 ### Run server
