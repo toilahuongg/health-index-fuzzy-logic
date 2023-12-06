@@ -19,12 +19,12 @@ const Result = () => {
             plugins: {
               title: {
                 display: true,
-                text: record.ket_qua < 4 ? 'Bạn đủ điều kiện để nhập ngũ' : 'Bạn không đủ điều kiện để nhập ngũ',
+                text: `Tình trạng: ${TINH_TRANG[record.ket_qua as string]}`,
                 font: { size: 20 }
               },
               subtitle: {
                 display: true,
-                text:[`Chỉ số sức khoẻ: ${record.ket_qua}`, `Tình trạng: ${TINH_TRANG[record.ket_qua as string]}`]
+                text:[`Chỉ số sức khoẻ: ${record.ket_qua}`]
               }
             }
           }}
