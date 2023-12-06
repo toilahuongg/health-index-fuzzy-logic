@@ -19,7 +19,7 @@ const Result = () => {
             plugins: {
               title: {
                 display: true,
-                text: record.ket_qua >= 4 ? 'Bạn đủ điều kiện để nhập ngũ' : 'Bạn không đủ điều kiện để nhập ngũ',
+                text: record.ket_qua < 4 ? 'Bạn đủ điều kiện để nhập ngũ' : 'Bạn không đủ điều kiện để nhập ngũ',
                 font: { size: 20 }
               },
               subtitle: {
