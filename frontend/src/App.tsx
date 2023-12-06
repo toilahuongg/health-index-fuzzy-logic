@@ -11,7 +11,7 @@ import { dataProvider } from "./dataProvider";
 import resourceHeathIndex from "./features/HeathIndex";
 dayjs.locale('vi')
 export const App: React.FC = () => (
-  <Admin title={"Heath Index"}  dataProvider={dataProvider} authProvider={authProvider} dashboard={Dashboard}  requireAuth>
+  <Admin title={"Heath Index"}  dataProvider={dataProvider} authProvider={authProvider} requireAuth>
     <Resource {...resourceHeathIndex} />
   </Admin>
 );

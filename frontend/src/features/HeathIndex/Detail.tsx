@@ -1,13 +1,14 @@
 import { Grid } from '@mui/material';
-import { ArcElement, CategoryScale, Chart as ChartJS, ChartOptions, ChartType, Colors, Legend, LineElement, LinearScale, PointElement, TimeScale, Title, Tooltip } from "chart.js";
+import { ArcElement, CategoryScale, Chart as ChartJS, ChartOptions, ChartType, Colors, Legend, LineElement, LinearScale, PointElement, TimeScale, Title, SubTitle, Tooltip } from "chart.js";
 import 'chartjs-adapter-moment';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import moment from 'moment';
 import React from "react";
 import { FunctionField, NumberField, Show, SimpleShowLayout, required, useGetList, useRecordContext } from "react-admin";
 import { Doughnut, Line } from 'react-chartjs-2';
+import { TINH_TRANG } from '../../contants';
 
-ChartJS.register(ArcElement, CategoryScale, LinearScale, PointElement, LineElement, TimeScale, zoomPlugin, Tooltip, Legend, Colors, Title);
+ChartJS.register(ArcElement, CategoryScale, LinearScale, PointElement, LineElement, TimeScale, zoomPlugin, Tooltip, Legend, Colors, Title, SubTitle);
 const Result = () => {
   const record = useRecordContext();
   return (
@@ -18,8 +19,12 @@ const Result = () => {
             plugins: {
               title: {
                 display: true,
-                text: `Chỉ số sức khoẻ: ${record.ket_qua}`,
+                text: record.ket_qua >= 4 ? 'Bạn đủ điều kiện để nhập ngũ' : 'Bạn không đủ điều kiện để nhập ngũ',
                 font: { size: 20 }
+              },
+              subtitle: {
+                display: true,
+                text:[`Chỉ số sức khoẻ: ${record.ket_qua}`, `Tình trạng: ${TINH_TRANG[record.ket_qua as string]}`]
               }
             }
           }}
